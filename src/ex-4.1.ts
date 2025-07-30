@@ -5,10 +5,15 @@ type User = {
 };
 
 function isAdult(user: User): boolean {
+  if (user.age === undefined) {
+    return false;
+  } else {
   return user.age >= 18;
+  }
 }
 
 const result = isAdult({ id: "u01", name: "John" });
 console.log(result); // ควรได้ false
 
 // Error ที่เจอคือ
+// error ที่เจออาจจะเป็น user.age มีค่าเป็น undefined
